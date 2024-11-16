@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { Button } from "antd";
+import Title from "antd/es/typography/Title";
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -12,31 +14,42 @@ const Header = () => {
     }
   };
   return (
-    <header>
+    <header className="flex justify-between p-6">
+      <Title level={4}>MoonCreations</Title>
       <nav>
-        <ul>
+        <ul className="flex">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <Button type="text">Home</Button>
+            </Link>
           </li>
           {!user && (
-            <>
+            <div className="flex">
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login">
+                  <Button type="text">Login</Button>
+                </Link>
               </li>
               <li>
-                <Link to="/register">Register</Link>
+                <Link to="/register">
+                  <Button type="text">Register</Button>
+                </Link>
               </li>
-            </>
+            </div>
           )}
           {user && (
-            <>
+            <div className="flex">
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link to="/profile">
+                  <Button type="text">Profile</Button>
+                </Link>
               </li>
               <li>
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogout}>
+                  <Button type="text">Logout</Button>
+                </button>
               </li>
-            </>
+            </div>
           )}
         </ul>
       </nav>
