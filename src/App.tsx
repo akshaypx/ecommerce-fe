@@ -9,27 +9,26 @@ import Profile from "./pages/Profile";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          {/* Landing Page  */}
-          <Route path="/" element={<Home />} />
-          {/* Login Page  */}
-          <Route path="/login" element={<Login />} />
-          {/* Register Page  */}
-          <Route path="/register" element={<Register />} />
-          {/* Protected Profile Page  */}
-          <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <Profile />
-              </PrivateRoute>
-            }
-          />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route
+              path="profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+          </Route>
         </Routes>
       </Router>
     </AuthProvider>
