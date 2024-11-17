@@ -32,7 +32,7 @@ const Layout: React.FC = () => {
           </div>
         </div>
         <div className="w-full text-center">
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
+          <p>&copy; 2024 MoonCreations. All rights reserved.</p>
         </div>
       </footer>
     </div>
