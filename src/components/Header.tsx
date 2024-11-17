@@ -17,7 +17,7 @@ const Header = () => {
     }
   };
   return (
-    <header className="flex justify-between p-6">
+    <header className="h-[10vh] flex justify-between p-6">
       <Title level={4}>MoonCreations</Title>
       <nav>
         <ul className="flex">
