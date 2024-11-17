@@ -9,8 +9,8 @@ const Layout: React.FC = () => {
       <main className="min-h-[70vh]">
         <Outlet /> {/* This is where child routes will be rendered */}
       </main>
-      <footer className="bg-gray-200 h-[20vh] p-6 flex flex-col justify-between">
-        <div className="flex">
+      <footer className="bg-gray-200 min-h-[20vh] p-6 flex flex-col justify-between gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="flex-1">
             <p>Home</p>
             <p>Shop All</p>
