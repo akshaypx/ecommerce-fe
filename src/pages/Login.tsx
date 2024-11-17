@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { showNotification } from "../utils/notification";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -12,9 +13,11 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await login(email, password);
+      showNotification("success", "Login Successful", "Welcome back!");
       navigate("/profile");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to login", error);
+      showNotification("error", "Login Failed", error.message);
     }
   };
 

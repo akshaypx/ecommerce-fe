@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { showNotification } from "../utils/notification";
 
 const Register: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -12,9 +13,11 @@ const Register: React.FC = () => {
     e.preventDefault();
     try {
       await register(email, password);
+      showNotification("success", "Register Success!");
       navigate("/profile");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to register", error);
+      showNotification("error", "Register Failed", error.message);
     }
   };
 

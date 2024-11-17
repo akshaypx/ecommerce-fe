@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Button } from "antd";
 import Title from "antd/es/typography/Title";
+import { showNotification } from "../utils/notification";
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -9,8 +10,10 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       await logout();
-    } catch (error) {
+      showNotification("success", "Logged Out Successfully");
+    } catch (error: any) {
       console.error("Error logging out:", error);
+      showNotification("error", "Logout Failed", error.message);
     }
   };
   return (
