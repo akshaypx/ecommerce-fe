@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { showNotification } from "../utils/notification";
 import { Input } from "antd";
 import Title from "antd/es/typography/Title";
@@ -45,6 +45,12 @@ const Login: React.FC = () => {
         required
       />
       <CustomButton type="submit" label={"Login"} />
+      <p>
+        New here? Create account{" "}
+        <Link to="/register" className="text-blue-700 underline">
+          Here
+        </Link>
+      </p>
     </form>
   );
 };

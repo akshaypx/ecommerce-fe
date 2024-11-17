@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="bg-gray-200 min-h-[20vh] ">
-      <div className="max-w-[900px] m-auto p-6 flex flex-col justify-between gap-4">
+      <div className="max-w-[900px] m-auto p-6 flex flex-col justify-between gap-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="flex-1">
             <p>Home</p>

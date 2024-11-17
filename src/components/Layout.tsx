@@ -7,7 +7,7 @@ const Layout: React.FC = () => {
   return (
     <div>
       <Header />
-      <main className="min-h-[70vh] max-w-[900px] m-auto">
+      <main className="min-h-[70vh]">
         <Outlet />
       </main>
       <Footer />
