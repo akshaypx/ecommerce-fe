@@ -30,101 +30,107 @@ const Header = () => {
   };
 
   return (
-    <header className="h-[10vh] flex justify-between p-6">
-      <Drawer
-        placement={"left"}
-        closable={false}
-        onClose={onClose}
-        open={open}
-        key={"left"}
-      >
-        <nav className="w-full text-center">
-          <ul className="flex flex-col gap-4">
+    <header className="h-[10vh]">
+      <div className="max-w-[900px] flex justify-between m-auto p-6">
+        <Drawer
+          placement={"left"}
+          closable={false}
+          onClose={onClose}
+          open={open}
+          key={"left"}
+        >
+          <nav className="w-full text-center">
+            <ul className="flex flex-col gap-4">
+              <li>
+                <Link to="/" onClick={() => onClose()}>
+                  <Button className="w-full" type="text">
+                    Home
+                  </Button>
+                </Link>
+              </li>
+              {!user && (
+                <div className="flex flex-col gap-4">
+                  <li>
+                    <Link to="/login" onClick={() => onClose()}>
+                      <Button className="w-full" type="text">
+                        Login
+                      </Button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/register" onClick={() => onClose()}>
+                      <Button className="w-full" type="text">
+                        Register
+                      </Button>
+                    </Link>
+                  </li>
+                </div>
+              )}
+              {user && (
+                <div className="flex flex-col gap-4">
+                  <li>
+                    <Link to="/profile" onClick={() => onClose()}>
+                      <Button className="w-full" type="text">
+                        Profile
+                      </Button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Button
+                      className="w-full"
+                      type="text"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </Button>
+                  </li>
+                </div>
+              )}
+            </ul>
+          </nav>
+        </Drawer>
+        <Title level={4}>MoonCreations</Title>
+        <Button className="md:hidden" type="default" onClick={showDrawer}>
+          <Menu />
+        </Button>
+        <nav className="hidden md:flex">
+          <ul className="flex">
             <li>
-              <Link to="/" onClick={() => onClose()}>
-                <Button className="w-full" type="text">
-                  Home
-                </Button>
+              <Link to="/">
+                <Button type="text">Home</Button>
               </Link>
             </li>
             {!user && (
-              <div className="flex flex-col gap-4">
+              <div className="flex">
                 <li>
-                  <Link to="/login" onClick={() => onClose()}>
-                    <Button className="w-full" type="text">
-                      Login
-                    </Button>
+                  <Link to="/login">
+                    <Button type="text">Login</Button>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/register" onClick={() => onClose()}>
-                    <Button className="w-full" type="text">
-                      Register
-                    </Button>
+                  <Link to="/register">
+                    <Button type="text">Register</Button>
                   </Link>
                 </li>
               </div>
             )}
             {user && (
-              <div className="flex flex-col gap-4">
+              <div className="flex">
                 <li>
-                  <Link to="/profile" onClick={() => onClose()}>
-                    <Button className="w-full" type="text">
-                      Profile
-                    </Button>
+                  <Link to="/profile">
+                    <Button type="text">Profile</Button>
                   </Link>
                 </li>
                 <li>
-                  <Button className="w-full" type="text" onClick={handleLogout}>
-                    Logout
-                  </Button>
+                  <button onClick={handleLogout}>
+                    <Button type="text">Logout</Button>
+                  </button>
                 </li>
               </div>
             )}
           </ul>
         </nav>
-      </Drawer>
-      <Title level={4}>MoonCreations</Title>
-      <Button className="md:hidden" type="default" onClick={showDrawer}>
-        <Menu />
-      </Button>
-      <nav className="hidden md:flex">
-        <ul className="flex">
-          <li>
-            <Link to="/">
-              <Button type="text">Home</Button>
-            </Link>
-          </li>
-          {!user && (
-            <div className="flex">
-              <li>
-                <Link to="/login">
-                  <Button type="text">Login</Button>
-                </Link>
-              </li>
-              <li>
-                <Link to="/register">
-                  <Button type="text">Register</Button>
-                </Link>
-              </li>
-            </div>
-          )}
-          {user && (
-            <div className="flex">
-              <li>
-                <Link to="/profile">
-                  <Button type="text">Profile</Button>
-                </Link>
-              </li>
-              <li>
-                <button onClick={handleLogout}>
-                  <Button type="text">Logout</Button>
-                </button>
-              </li>
-            </div>
-          )}
-        </ul>
-      </nav>
+      </div>
     </header>
   );
 };
