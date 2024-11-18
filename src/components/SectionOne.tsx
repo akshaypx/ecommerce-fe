@@ -1,4 +1,4 @@
-import Title from "antd/es/typography/Title";
+//import Title from "antd/es/typography/Title";
 import BentoGrid from "./BentoGrid";
 
 const SectionOne = () => {
