@@ -4,24 +4,40 @@ const CustomCarousel = () => {
   return (
     <Carousel autoplay>
       <div>
-        <h3 className="h-[160px] text-[#fff} leading-[160px] text-center bg-[#364d79]">
-          1
-        </h3>
+        <div className="h-[40rem] text-[#fff} leading-[40rem] text-center">
+          <img
+            src="src\assets\carousel1.jpeg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
       </div>
       <div>
-        <h3 className="h-[160px] text-[#fff} leading-[160px] text-center bg-[#364d79]">
-          2
-        </h3>
+        <div className="h-[40rem] text-[#fff} leading-[40rem] text-center">
+          <img
+            src="src\assets\carousel2.jpeg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
       </div>
       <div>
-        <h3 className="h-[160px] text-[#fff} leading-[160px] text-center bg-[#364d79]">
-          3
-        </h3>
+        <div className="h-[40rem] text-[#fff} leading-[40rem] text-center">
+          <img
+            src="src\assets\carousel3.jpeg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
       </div>
       <div>
-        <h3 className="h-[160px] text-[#fff} leading-[160px] text-center bg-[#364d79]">
-          4
-        </h3>
+        <div className="h-[40rem] text-[#fff} leading-[40rem] text-center">
+          <img
+            src="src\assets\carousel4.jpeg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
       </div>
     </Carousel>
   );
