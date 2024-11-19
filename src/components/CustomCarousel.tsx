@@ -6,7 +6,7 @@ const CustomCarousel = () => {
       <div>
         <div className="h-[40rem] text-[#fff} leading-[40rem] text-center">
           <img
-            src="src\assets\carousel1.jpeg"
+            src=".\src\assets\carousel1.jpeg"
             alt=""
             className="h-full w-full object-cover"
           />
